@@ -1,11 +1,8 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import Schedule from "./components/Schedule";
 import "./styles/app.css"
 const tg = window.Telegram.WebApp
 
-const handlerWatch = () => {
-  tg.sendData({message: "complete"})
-}
 
 function App() {
   useEffect(() => {
@@ -14,6 +11,10 @@ function App() {
     })
   }, [])
 
+  const handlerWatch = useCallback(() => {
+    tg.sendData({message: "complete"})
+  }, [])
+  
   useEffect(() => {
      tg.ready()
   }, [])
@@ -21,7 +22,7 @@ function App() {
   useEffect(() => {
     tg.onEvent("mainButtonClicked", handlerWatch)
     return () => tg.offEvent("mainButtonClicked", handlerWatch)
-  }, [])
+  }, [handlerWatch])
 
   useEffect(() => {
       setTimeout(() => {
