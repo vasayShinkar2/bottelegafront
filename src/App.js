@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import Schedule from "./components/Schedule";
 import "./styles/app.css"
 const tg = window.Telegram.WebApp
-function App() {
-  const handlerWatch = () => {
-    tg.sendData("watch complete")
-  }
 
+const handlerWatch = () => {
+  tg.sendData({message: "complete"})
+}
+
+function App() {
   useEffect(() => {
     tg.MainButton.setParams({
       text: "я прочитал"
