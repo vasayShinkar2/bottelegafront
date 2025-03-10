@@ -12,7 +12,7 @@ function App() {
   }, [])
 
   const handlerWatch = useCallback(() => {
-    tg.sendData({message: "complete"})
+    tg.sendData(JSON.stringify({message: "complete"}))
   }, [])
   
   useEffect(() => {
@@ -32,7 +32,7 @@ function App() {
   return (
     <div>
       <Schedule />
-      <div onClick={() => tg.close()}>закрыть приложуху</div>
+      <div onClick={() => tg.close()}>закрыть приложуху ))</div>
     </div>
 
   );
