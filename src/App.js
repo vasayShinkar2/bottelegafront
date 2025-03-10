@@ -1,10 +1,11 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Schedule from "./components/Schedule";
 import "./styles/app.css"
 const tg = window.Telegram.WebApp
 
 
 function App() {
+  const [v, setv] = useState(2)
   useEffect(() => {
     tg.MainButton.setParams({
       text: "я прочитал"
@@ -12,6 +13,7 @@ function App() {
   }, [])
 
   const handlerWatch = useCallback(() => {
+    setv(3)
     tg.sendData(JSON.stringify({message: "complete"}))
   }, [])
   
@@ -32,6 +34,7 @@ function App() {
   return (
     <div>
       <Schedule />
+      {v}
       <div onClick={() => tg.close()}>закрыть приложуху ))</div>
     </div>
 
