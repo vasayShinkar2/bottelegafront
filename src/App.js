@@ -1,13 +1,17 @@
-
+import Schedule from "./components/Schedule";
+import "./styles/app.css"
+const tg = window.Telegram.WebApp
 function App() {
+  const handlerWatch = () => {
+    tg.sendData("я посмотрел")
+  }
   return (
     <div>
-      расписание :
-      9:00 - 10:00 - физика
-      10:20 - 12:20 -  химия
+      <Schedule />
+      <button onClick={handlerWatch}>я посмотрел и доволен</button>
 
     </div>
-    
+
   );
 }
 
