@@ -19,8 +19,8 @@ function App() {
   }, [])
 
   useEffect(() => {
-    tg.onEvent("mainButtonClick", handlerWatch)
-    return () => tg.offEvent("mainButtonClick", handlerWatch)
+    tg.onEvent("mainButtonClicked", handlerWatch)
+    return () => tg.offEvent("mainButtonClicked", handlerWatch)
   }, [])
 
   useEffect(() => {
