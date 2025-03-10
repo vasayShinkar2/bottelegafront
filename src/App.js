@@ -8,7 +8,7 @@ function App() {
   }
 
   useEffect(() => {
-    tg.setParams({
+    tg.MainButton.setParams({
       text: "я прочитал"
     })
   }, [])
