@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import Schedule from "./components/Schedule";
 import "./styles/app.css"
 const tg = window.Telegram.WebApp
