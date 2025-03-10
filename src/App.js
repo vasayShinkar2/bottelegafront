@@ -32,7 +32,7 @@ function App() {
   return (
     <div>
       <Schedule />
-      <div onClick={() => tg.close()}>закрыть приложуху</div>
+      <div onClick={() => tg.close()}>закрыть приложуху )</div>
     </div>
 
   );
