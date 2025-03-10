@@ -5,7 +5,6 @@ const tg = window.Telegram.WebApp
 
 
 function App() {
-  const [v, setv] = useState(2)
   useEffect(() => {
     tg.MainButton.setParams({
       text: "я прочитал"
@@ -13,7 +12,6 @@ function App() {
   }, [])
 
   const handlerWatch = useCallback(() => {
-    setv(3)
     tg.sendData(JSON.stringify({message: "complete"}))
   }, [])
   
@@ -33,9 +31,11 @@ function App() {
   },[])
   return (
     <div>
+      <div>
+       {tg.initDataUnsage?.user?.name}
+       <button onClick={() => tg.close()}>закрыть приложение</button>
+       </div>
       <Schedule />
-      {v}
-      <div onClick={() => tg.close()}>закрыть приложуху ))</div>
     </div>
 
   );
