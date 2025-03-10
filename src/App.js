@@ -15,6 +15,10 @@ function App() {
   }, [])
 
   useEffect(() => {
+     tg.ready()
+  }, [])
+
+  useEffect(() => {
     tg.onEvent("mainButtonClick", handlerWatch)
     return () => tg.offEvent("mainButtonClick", handlerWatch)
   }, [])
@@ -27,6 +31,7 @@ function App() {
   return (
     <div>
       <Schedule />
+      <div onClick={() => tg.close()}>закрыть приложуху</div>
     </div>
 
   );
